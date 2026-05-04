@@ -1,5 +1,8 @@
-
-streamlit
+fastapi
+uvicorn
+python-multipart
 PyPDF2
-spacy
 scikit-learn
+python-dotenv
+streamlit
+spacy
