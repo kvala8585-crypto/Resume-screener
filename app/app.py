@@ -7,10 +7,10 @@ from sklearn.feature_extraction.text import CountVectorizer
 from sklearn.metrics.pairwise import cosine_similarity
 from dotenv import load_dotenv
 
-# ✅ Load environment variables
+#  Load environment variables
 load_dotenv()
 
-# ✅ Get email credentials from .env
+# Get email credentials from .env
 from_email = os.getenv("EMAIL_USER")
 password = os.getenv("EMAIL_PASS")
 
@@ -31,11 +31,11 @@ def send_email(to_email, subject, message):
         return False
 
 
-# ✅ Load NLP model
+#  Load NLP model
 nlp = spacy.load("en_core_web_sm")
 
 
-# ✅ Function to extract text from PDF
+#  Function to extract text from PDF
 def extract_text_from_pdf(file):
     text = ""
     pdf_reader = PyPDF2.PdfReader(file)
@@ -45,7 +45,7 @@ def extract_text_from_pdf(file):
     return text
 
 
-# ✅ FIX: Dynamic path for job_description.txt
+#  FIX: Dynamic path for job_description.txt
 base_dir = os.path.dirname(__file__)
 file_path = os.path.join(base_dir, "job_description.txt")
 
@@ -87,10 +87,10 @@ if uploaded_files:
     st.success(f"Top Candidate Selected: {top_candidate}")
 
 
-# ✅ Email input
+#  Email input
 email = st.text_input("Enter Candidate Email")
 
-# ✅ Send Email
+# Send Email
 if st.button("Send Email"):
     if not email:
         st.warning("⚠️ Please enter email")
